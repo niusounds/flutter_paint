@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_paint/draw_data.dart';
 import 'package:provider/provider.dart';
 
+import 'draw_data.dart';
 import 'paint_canvas.dart';
 
 const appName = 'Flutter paint';
@@ -28,26 +28,26 @@ class DrawingPage extends StatelessWidget {
       create: (context) => DrawData(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(appName),
+          title: const Text(appName),
           actions: <Widget>[
             Consumer<DrawData>(
               builder: (context, drawData, child) => IconButton(
                 tooltip: 'Undo',
-                icon: Icon(Icons.undo),
+                icon: const Icon(Icons.undo),
                 onPressed: drawData.canUndo ? drawData.undo : null,
               ),
             ),
             Consumer<DrawData>(
               builder: (context, drawData, child) => IconButton(
                 tooltip: 'Redo',
-                icon: Icon(Icons.redo),
+                icon: const Icon(Icons.redo),
                 onPressed: drawData.canRedo ? drawData.redo : null,
               ),
             ),
             Consumer<DrawData>(
               builder: (context, drawData, child) => IconButton(
                 tooltip: 'Clear',
-                icon: Icon(Icons.delete),
+                icon: const Icon(Icons.delete),
                 onPressed: drawData.paths.isNotEmpty ? drawData.clear : null,
               ),
             ),

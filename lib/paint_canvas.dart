@@ -58,7 +58,7 @@ class PaintCanvasState extends State<PaintCanvas> {
   /// Clear in-drawing points and create Path.
   void _onPanEnd(DragEndDetails details) {
     final Path path = _createPathFromPoints();
-    widget.onPathCreated?.call(path);
+    widget.onPathCreated.call(path);
     _inDrawingPoints.clear();
   }
 
