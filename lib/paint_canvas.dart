@@ -7,9 +7,9 @@ import 'draw_data.dart';
 
 class PaintCanvas extends StatefulWidget {
   const PaintCanvas({
-    Key key,
-    this.onPathCreated,
-  }) : super(key: key);
+    super.key,
+    required this.onPathCreated,
+  });
 
   final ValueChanged<Path> onPathCreated;
 
@@ -39,7 +39,7 @@ class PaintCanvasState extends State<PaintCanvas> {
   }
 
   void _addPoint(Offset globalPosition) {
-    final RenderBox renderBox = context.findRenderObject();
+    final RenderBox renderBox = context.findRenderObject() as RenderBox;
     final Offset localPosition = renderBox.globalToLocal(globalPosition);
 
     setState(() {
@@ -73,8 +73,8 @@ class _MyPainter extends CustomPainter {
   final Paint _paint = Paint();
 
   _MyPainter({
-    @required this.paths,
-    @required this.points,
+    required this.paths,
+    required this.points,
   }) {
     _paint
       ..strokeWidth = 2

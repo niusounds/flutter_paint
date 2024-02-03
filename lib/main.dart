@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 }
 
 class DrawingPage extends StatelessWidget {
-  const DrawingPage({Key key}) : super(key: key);
+  const DrawingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
